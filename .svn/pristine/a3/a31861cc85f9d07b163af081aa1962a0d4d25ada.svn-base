@@ -1,0 +1,46 @@
+boot.o: boot.S multiboot.h x86_desc.h types.h
+ece391syscall.o: ece391syscall.S ece391sysnum.h
+linkage.o: linkage.S
+syscall_wrapper.o: syscall_wrapper.S
+x86_desc.o: x86_desc.S x86_desc.h types.h
+exceptions.o: exceptions.c exceptions.h lib.h types.h multiboot.h \
+  x86_desc.h i8259.h debug.h
+ext2.o: ext2.c ext2.h types.h harddisk.h i8259.h syscall.h lib.h \
+  x86_desc.h multiboot.h debug.h file_sys.h process.h
+file_sys.o: file_sys.c file_sys.h lib.h types.h harddisk.h i8259.h \
+  syscall.h x86_desc.h multiboot.h debug.h process.h ext2.h
+harddisk.o: harddisk.c harddisk.h types.h i8259.h syscall.h lib.h \
+  x86_desc.h multiboot.h debug.h file_sys.h process.h ext2.h
+i8259.o: i8259.c i8259.h types.h lib.h
+idt.o: idt.c idt.h lib.h types.h x86_desc.h exceptions.h multiboot.h \
+  i8259.h debug.h syscall_wrapper.h linkage.h rtc.h keyboard.h terminal.h \
+  mouse.h scheduler.h syscall.h file_sys.h harddisk.h process.h ext2.h \
+  paging.h
+kernel.o: kernel.c multiboot.h types.h x86_desc.h lib.h i8259.h debug.h \
+  idt.h exceptions.h syscall_wrapper.h linkage.h rtc.h keyboard.h \
+  terminal.h mouse.h scheduler.h syscall.h file_sys.h harddisk.h \
+  process.h ext2.h paging.h pit.h ece391syscall.h
+keyboard.o: keyboard.c keyboard.h lib.h types.h x86_desc.h i8259.h \
+  multiboot.h debug.h terminal.h
+lib.o: lib.c lib.h types.h
+mouse.o: mouse.c mouse.h lib.h types.h x86_desc.h i8259.h multiboot.h \
+  debug.h terminal.h
+paging.o: paging.c paging.h types.h x86_desc.h process.h file_sys.h lib.h \
+  harddisk.h i8259.h syscall.h multiboot.h debug.h ext2.h terminal.h
+pit.o: pit.c pit.h types.h i8259.h syscall.h lib.h x86_desc.h multiboot.h \
+  debug.h file_sys.h harddisk.h process.h ext2.h
+process.o: process.c process.h x86_desc.h types.h file_sys.h lib.h \
+  harddisk.h i8259.h syscall.h multiboot.h debug.h ext2.h terminal.h
+rtc.o: rtc.c rtc.h types.h lib.h i8259.h multiboot.h x86_desc.h debug.h
+scheduler.o: scheduler.c scheduler.h terminal.h lib.h types.h debug.h \
+  syscall.h x86_desc.h i8259.h multiboot.h file_sys.h harddisk.h \
+  process.h ext2.h paging.h
+soundblaster16.o: soundblaster16.c rtc.h types.h lib.h i8259.h \
+  multiboot.h x86_desc.h debug.h pit.h syscall.h file_sys.h harddisk.h \
+  process.h ext2.h
+syscall.o: syscall.c syscall.h lib.h types.h x86_desc.h i8259.h \
+  multiboot.h debug.h file_sys.h harddisk.h process.h ext2.h terminal.h \
+  paging.h rtc.h
+terminal.o: terminal.c terminal.h lib.h types.h debug.h keyboard.h \
+  x86_desc.h i8259.h multiboot.h paging.h scheduler.h syscall.h \
+  file_sys.h harddisk.h process.h ext2.h ece391syscall.h

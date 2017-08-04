@@ -1,0 +1,26 @@
+﻿==========THE UNDEBUGGABLE================
+==============DEBUG LOG===================
+=============FUCK ECE391==================
+
+WE NEED THIS FOR THE FINAL CP
+
+FORMAT: NO/SOLVED/DATE CREATED/DESCRIPTION/Issues
+
+1.N. Oct 27th  / The left up pixel on the screen does not show up —Yang
+2.Y. Oct 27th  / Shift key will result in priting two more character on the console -Yu
+3.Y. Oct 27th  / Capslock not working-Yu
+4.Y. Oct 28th  / Fixed a bug for Capslock -Yu
+5.Y. Oct 30th  / File system cannot read big file -Yang  /did not handle the edge case
+6.Y  Oct.30th  / File system cannot read exeutable -Yang / Print out the characters instead of string
+7.N  Nov.2th  /RTC write 
+8.N  Nov.2th  /Keyboard Buffer does not clean up everytime the enter is pressed
+
+9.N  Nov.2th  /Keyboard Buffer does not clean up everytime the enter is pressed
+10.Y   Nov.10th /Halt Triple Fault/ -----------solution?
+11.Y  Nov.11th /LS output strange stuffs
+12.Y  Nov.12th /Fixed exiting last shell
+13.Y  Nov.13th/Fixed bugs in filesystem "helloo" can execute "hello"
+14. N  Nov.13th/ Run syserr 3 twice and page fault
+15.Y  cannot open more than 6 ls/ need to clean up the pcb when a process finished
+16. Y exit last shell many times cause other process cannot open, fixed by adding an end process for last shell situation.
+17.Y NOV.13th /page fault/ pass arg into pcb may result page fault/size of pcb argument is 100 while the buffer require 1024
