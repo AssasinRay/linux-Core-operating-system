@@ -1,5 +1,4 @@
-ECE391 MP3 - Package contents
-================================
+unix core 
 
 createfs
     This program takes a flat source directory (i.e. no subdirectories
